@@ -45,4 +45,3 @@ if st.button("Generate Response 🚀"):
 # ---------------- SIDEBAR INFO ----------------
 st.sidebar.markdown("### ⚙️ Configuration")
 st.sidebar.markdown("- **Model:** gemini-2.5-flash\n- **Provider:** Google Generative AI\n- **UI:** Streamlit")
-# st.sidebar.info("Tip: You can set your API key permanently via environment variable `AIzaSyAa67mw7Mqj3iBTZVyxm_L2djS-Mz1V_VA`.")
