@@ -1,0 +1,45 @@
+Encoder Decoder Models
+In deep learning the encoder-decoder model is a type of neural network that is mainly used for tasks where both the input and output are sequences. This architecture is used when the input and output sequences are not the same length for example translating a sentence from one language to another, summarizing a paragraph, describing an image with a caption or convert speech into text. It works in two stages:
+
+Encoder: The encoder takes the input data like a sentence and processes each word one by one then creates a single, fixed-size summary of the entire input called a context vector or latent space.
+Decoder: The decoder takes the context vector and begins to produce the output one step at a time.
+For example, in machine translation an encoder-decoder model might take an English sentence as input (like "I am learning AI") and translate it into French ("Je suis en train d'apprendre l'IA").
+
+Encoder-Decoder Model Architecture
+In an encoder-decoder model both the encoder and decoder are separate networks each one has its own specific task. These networks can be different types such as Recurrent Neural Networks (RNNs), Long Short-Term Memory networks (LSTMs), Gated Recurrent Units (GRUs), Convolutional Neural Networks (CNNs) or even more advanced models like Transformers.
+
+Encoder
+The encoder's job is to process the input data and convert it into a form that the model can understand. It does this using two main steps:
+
+Self-Attention Layer: This layer helps the encoder focus on different parts of the input data that are important for understanding the context. For example in a sentence it allows the model to consider how each word relates to the others.
+Feed-Forward Neural Network: After the self-attention layer this network processes the information further to capture complex patterns and relationships in the data.
+
+Decoder
+The decoder takes the processed information from the encoder and generates the output. It also has three main components:
+
+Self-Attention Layer: Similar to the encoder this layer allows the decoder to focus on different parts of the output it has generated.
+Encoder-Decoder Attention Layer: This unique layer enables the decoder to focus on relevant parts of the input data help to generate more accurate outputs.
+Feed-Forward Neural Network: Like the encoder the decoder uses this network to process the information and generate the final output.
+
+Working of Encoder Decoder Model
+The actual working of the encoder decoder model is shown in below diagram. Now we will understand it stepwise:
+
+Step 1: Tokenizing the Input Sentence
+The sentence "I am learning AI" is first broken into tokens: ["I", "am", "learning", "AI"].
+Each word (token) is converted into a vector that a machine can understand. This process is called embedding.
+Step 2: Encoding the Input
+The Encoder processes these embeddings using self-attention.
+Self-attention helps the encoder to focus on important words. For example while encoding "learning", it understands its relation with "I" and "AI."
+After processing the encoder generates a Context Vector which captures the meaning of the entire sentence. For example in the image The arrows show how each word relates to the others during encoding. The final output from the encoder is the context representation
+Step 3: Passing the Context to the Decoder
+The Context Vector is passed to the Decoder as shown in image.
+It acts like a summary of the full input sentence.
+Step 4: Decoder Generates Output Step-by-Step
+The Decoder uses the context and starts creating the output one word at a time.
+First it predicts the first word then uses that to predict the second word and so on
+Step 5: Decoder Attention
+While generating each word the decoder attends to different parts of the input sentence to make better predictions.
+For example when translating "learning," it might pay more attention to the word "learning" in the input.
+Step 6: Producing the Final Output
+The decoder continues generating until the full translated sentence is produced.
+Each output token depends on the previous ones and the input context. You finally see the output tokens generated on the right side of the diagram completing the translation.
